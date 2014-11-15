@@ -1,12 +1,11 @@
 ﻿
-Public MustInherit Class Order
+Public Class Order
+    Inherits OrderBase
 
-    Public Property Id As Integer
+    Public Property SubscriptionDate As DateTime
+    Public Property ValidationDate As DateTime
+    Public Property ValidatorID As Guid
+    Public Property Number As Integer
 
-    Public Property Name As Integer
 
-    Public Property Description As Integer
- 
-    Public Property Amount As Integer
- 
 End Class

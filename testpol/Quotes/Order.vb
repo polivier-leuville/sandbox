@@ -6,15 +6,22 @@ Public Class Order
     Inherits OrderBase
 
     Public Property SubscriptionDate As DateTime
-    Public Property ValidationDate As DateTime
+    Public Property ValidationDate As DateTime = Nothing
     Public Property ValidatorID As Guid
     Public Property Number As Integer
     Public Property Promos As new List(Of ReductBase)
-
+    ''' <summary>
+    ''' Constructeur
+    ''' </summary>
+    ''' <remarks></remarks>
     Public Sub New()
 
     End Sub
-
+    ''' <summary>
+    ''' Constructeur - Création d'une commande à partir d'une proposition
+    ''' </summary>
+    ''' <param name="quote"></param>
+    ''' <remarks></remarks>
     Public Sub New(quote As Quote)
         MyBase.New()
 
@@ -32,8 +39,11 @@ Public Class Order
         quote.Statut = StatutEnum.Ordered
 
     End Sub
-
-
+    ''' <summary>
+    ''' Clonage d'une commande - Interdit pour le moement :-)
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
     Public Overrides Function Clone() As Object
 
         Throw New OrderException("Une commande ne peut être dupliquée !")
@@ -42,7 +52,7 @@ Public Class Order
     End Function
 
     ''' <summary>
-    ''' Calcul du TTC
+    ''' Calcul du montant des promotion niveau "Commande"
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
@@ -62,7 +72,7 @@ Public Class Order
 
 
     ''' <summary>
-    ''' Calcul du TTC
+    ''' Calcul du Grand total
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>

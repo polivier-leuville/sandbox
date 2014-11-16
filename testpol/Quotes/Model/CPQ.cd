@@ -8,9 +8,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Quotes.OrderBase">
-    <Position X="3" Y="4.5" Width="1.5" />
+    <Position X="7.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEQAAAAABQAAAAQAAAEAAAAAAAAEAABAAAABA=</HashCode>
+      <HashCode>AAAAAAAEQAAAAABQAEAAQAAAEAAAAAAAAEAAAAAAABA=</HashCode>
       <FileName>Abstracts\OrderBase.vb</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -19,7 +19,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Quotes.Quote">
-    <Position X="2" Y="7.75" Width="1.5" />
+    <Position X="6.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAIAAABA=</HashCode>
       <FileName>Quote.vb</FileName>
@@ -27,17 +27,20 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Quotes.Order">
-    <Position X="4" Y="7.75" Width="1.5" />
+    <Position X="8.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAAEAAAAAEAAAAAAAAAAAAAAAAABABAAABA=</HashCode>
+      <HashCode>AAAACAAAAAAEQAAAAEAAAAAAAAAAAAAAAAABABAAABA=</HashCode>
       <FileName>Order.vb</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Promos" />
+    </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Quotes.LineItem">
+  <Class Name="Quotes.LineItemBase">
     <Position X="12.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAIAEAAAAAAAAEAAAAAAAAAAAAAAAgAEAgAAAAAA=</HashCode>
-      <FileName>LineItem.vb</FileName>
+      <FileName>Abstracts\LineItemBase.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Reduction" />
@@ -65,7 +68,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Quotes.PercentageReduct">
-    <Position X="18.5" Y="4.25" Width="1.5" />
+    <Position X="18.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PercentageReduct.vb</FileName>

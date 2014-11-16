@@ -8,7 +8,11 @@ Public Class Quote
     Implements ICloneable
 
     Public Property ProposalDate As DateTime
-
+    ''' <summary>
+    ''' Duplication d'une proposition
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
     Public Overrides Function Clone() As Object
         Dim m As New MemoryStream()
         Dim f As New BinaryFormatter()
@@ -22,7 +26,12 @@ Public Class Quote
 
         Return newQuote
     End Function
-
+    ''' <summary>
+    ''' Chargement depuis un fichier JSON
+    ''' </summary>
+    ''' <param name="jsonStr"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
     Public Shared Function LoadFrom(jsonStr As String) As Quote
 
         Return JsonConvert.DeserializeObject(Of Quote)(jsonStr)

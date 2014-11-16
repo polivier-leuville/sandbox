@@ -106,8 +106,8 @@ Imports Quotes
         Dim amount As Double
         Dim commande = New Order(propale)
 
-        commande.Promos.Add(New PercentageReduct(10.0))
-        commande.Promos.Add(New AmountReduct(80))
+        commande.Promos.Add(New PercentageReduct("Neafflix", "Promotion jeune entrepreneur", 10.0))
+        commande.Promos.Add(New AmountReduct("pj.fr", "Promotion nouveau contrat", 80))
 
         amount = commande.GetHT()
         Assert.AreEqual(1000.0, amount, "Calcul du HT")
@@ -124,9 +124,11 @@ Imports Quotes
         amount = commande.GetGrandTotal()
         Assert.AreEqual(1000.0, amount, "Calcul du total TTC")
 
+        commande.toJSONFile("D:\CommandeWithPromo.json")
+
 
     End Sub
-    <TestMethod()> Public Sub InvalidQuoteReuseAfterCreatingOrder()
+    <TestMethod()> Public Sub CheckInvalidQuoteReuseAfterCreatingOrder()
 
         Dim propale = CreateQuote()
 
@@ -142,7 +144,7 @@ Imports Quotes
     End Sub
 
 
-    <TestMethod()> Public Sub InvalidDuplicateOrder()
+    <TestMethod()> Public Sub CheckInvalidDuplicateOrder()
 
         Dim propale = CreateQuote()
 
@@ -169,9 +171,7 @@ Imports Quotes
     <TestMethod()> Public Sub JSONMemorySerializeQuote()
 
         Dim propale = CreateQuote()
-
         Dim s = propale.toJSON()
-
         Assert.IsNotNull(s)
 
     End Sub

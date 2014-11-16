@@ -8,7 +8,7 @@ Public MustInherit Class OrderBase
 
     Public Property OwneID As Guid
     Public Property CustomerID As Guid
-    Public Property ProductLines As New List(Of LineItem)
+    Public Property ProductLines As New List(Of LineItemBase)
     Public Property Statut As StatutEnum
 
     ''' <summary>
@@ -16,7 +16,7 @@ Public MustInherit Class OrderBase
     ''' </summary>
     ''' <param name="line"></param>
     ''' <remarks></remarks>
-    Public Sub AddProduct(line As LineItem)
+    Public Sub AddProduct(line As LineItemBase)
         ProductLines.Add(line)
     End Sub
 
@@ -50,7 +50,7 @@ Public MustInherit Class OrderBase
 
         For Each p In ProductLines
 
-            totalTVA += (p.GetPrice() * p.Taxe) / 100.0
+            totalTVA += (p.GetPrice() * p.TypeTaxe) / 100.0
 
         Next
 
@@ -69,7 +69,7 @@ Public MustInherit Class OrderBase
 
         For Each p In ProductLines
 
-            totalTTC = totalTTC + (p.GetPrice() + ((p.GetPrice() * p.Taxe) / 100.0))
+            totalTTC = totalTTC + (p.GetPrice() + ((p.GetPrice() * p.TypeTaxe) / 100.0))
 
         Next
 

@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Quotes.ObjectBase">
-    <Position X="8.25" Y="0.5" Width="1.5" />
+    <Position X="12.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAoAAAAAAAAAAQAAAAAAAAAAgAACAAAAAA=</HashCode>
-      <FileName>ObjectBase.vb</FileName>
+      <HashCode>AAACAAAAAAAgAAAAAAAAIAQAAAAAAAAAAgAACgAAAAA=</HashCode>
+      <FileName>Abstracts\ObjectBase.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Quotes.OrderBase">
-    <Position X="6.25" Y="4.5" Width="1.5" />
+    <Position X="3" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEQAAAAABQAAAAQAAAAAAAAAAAAEAABAAIABA=</HashCode>
-      <FileName>OrderBase.vb</FileName>
+      <HashCode>AAAAAAAEQAAAAABQAAAAQAAAEAAAAAAAAEAABAAAABA=</HashCode>
+      <FileName>Abstracts\OrderBase.vb</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="ProductLines" />
@@ -19,7 +19,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Quotes.Quote">
-    <Position X="5.25" Y="7.75" Width="1.5" />
+    <Position X="2" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAIAAABA=</HashCode>
       <FileName>Quote.vb</FileName>
@@ -27,52 +27,92 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Quotes.Order">
-    <Position X="7.25" Y="7.75" Width="1.5" />
+    <Position X="4" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAAEAAAAAEAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <HashCode>AAAACAAAAAAEAAAAAEAAAAAAAAAAAAAAAAABABAAABA=</HashCode>
       <FileName>Order.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Quotes.LineItem">
-    <Position X="10.25" Y="4.5" Width="1.5" />
+    <Position X="12.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAgAAAAAA=</HashCode>
+      <HashCode>BAAAAIAEAAAAAAAAEAAAAAAAAAAAAAAAgAEAgAAAAAA=</HashCode>
       <FileName>LineItem.vb</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Reduction" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Quotes.ProductLineItem">
-    <Position X="9.25" Y="7.75" Width="1.5" />
+    <Position X="11.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ProductLineItem.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Quotes.ServiceLineItem">
-    <Position X="11.25" Y="7.75" Width="1.5" />
+    <Position X="13.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ServiceLineItem.vb</FileName>
     </TypeIdentifier>
   </Class>
-  <Struct Name="Quotes.TvaStruct">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+  <Class Name="Quotes.ReductBase">
+    <Position X="15.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
-      <FileName>TvaStruct.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAQAgAAAAAAA=</HashCode>
+      <FileName>Abstracts\ReductBase.vb</FileName>
     </TypeIdentifier>
-  </Struct>
+  </Class>
+  <Class Name="Quotes.PercentageReduct">
+    <Position X="18.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PercentageReduct.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Quotes.AmountReduct">
+    <Position X="18.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AmountReduct.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Quotes.OrderException">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exeptions\OrderException.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Quotes.QuoteException">
+    <Position X="2.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exeptions\QuoteException.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
   <Enum Name="Quotes.StatutEnum">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAEAAAAACAAAAAAAAAACAAAAAAAAQAAAAAABAAAAg=</HashCode>
-      <FileName>StatutEnum.vb</FileName>
+      <FileName>Enums\StatutEnum.vb</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="Quotes.TaxeEnum">
-    <Position X="0.5" Y="2.5" Width="1.5" />
+    <Position X="0.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAIAAAAABAAAAEAAAA=</HashCode>
-      <FileName>TaxeEnum.vb</FileName>
+      <FileName>Enums\TaxeEnum.vb</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Quotes.ReductEnum">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\ReductEnum.vb</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

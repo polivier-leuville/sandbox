@@ -30,7 +30,7 @@ Imports Quotes
 
         Dim q As New Quote()
         Assert.AreEqual(q.ProductLines.Count, 0)
-        q.ProductLines.Add(New ProductLineItem())
+        q.ProductLines.Add(New ProductLineItem("ART001", 100.0, TaxeEnum.Normal))
         Assert.AreEqual(q.ProductLines.Count, 1)
         q.ProductLines.Clear()
         Assert.AreEqual(q.ProductLines.Count, 0)
@@ -45,13 +45,13 @@ Imports Quotes
         Assert.AreEqual(propale.ProductLines.Count, 3)
 
         amount = propale.GetHT()
-        Assert.AreEqual(amount, 109.99)
+        Assert.AreEqual(109.99, amount)
 
         amount = propale.GetTVA()
-        Assert.AreEqual(amount, 20.999)
+        Assert.AreEqual(21.0, amount)
 
-        amount = propale.GetTTC()
-        Assert.AreEqual(amount, 130.989)
+        amount = propale.GetGrandTotalWithoutPromo()
+        Assert.AreEqual(130.99, amount)
 
 
     End Sub
@@ -65,18 +65,67 @@ Imports Quotes
         Dim cde = New Order(propale)
 
         amount = cde.GetHT()
-        Assert.AreEqual(amount, 109.99)
+        Assert.AreEqual(109.99, amount)
 
         amount = cde.GetTVA()
-        Assert.AreEqual(amount, 20.999)
+        Assert.AreEqual(21.0, amount)
 
-        amount = cde.GetTTC()
-        Assert.AreEqual(amount, 130.989)
-
+        amount = cde.GetGrandTotalWithoutPromo()
+        Assert.AreEqual(130.99, amount)
 
     End Sub
 
+    <TestMethod()> Public Sub CreateQuoteWithProductLinesReductions()
 
+        Dim propale = CreateQuote()
+        Dim amount As Double
+
+        propale.ProductLines(0).Reduction = New PercentageReduct(3.0)
+        propale.ProductLines(1).Reduction = New AmountReduct(6.99)
+
+        amount = propale.GetHT()
+        Assert.AreEqual(100.0, amount, "Calcul du HT")
+
+        amount = propale.GetTVA()
+        Assert.AreEqual(19.7, amount, "Calcul de la TVA")
+
+        amount = propale.GetGrandTotalWithoutPromo()
+        Assert.AreEqual(119.7, amount, "Calcul du TTC")
+
+    End Sub
+
+    <TestMethod()> Public Sub CreateOrderWithGeneralReductions()
+
+        Dim propale As New Quote()
+
+        Dim p = New ProductLineItem("ART001", 10.0, TaxeEnum.Normal)
+
+        propale.AddProduct(New ProductLineItem("ART001", 100.0, TaxeEnum.Normal))
+        propale.AddProduct(New ServiceLineItem("SRV001", 900.0, TaxeEnum.Normal))
+
+        Dim amount As Double
+        Dim commande = New Order(propale)
+
+        commande.Promos.Add(New PercentageReduct(10.0))
+        commande.Promos.Add(New AmountReduct(80))
+
+        amount = commande.GetHT()
+        Assert.AreEqual(1000.0, amount, "Calcul du HT")
+
+        amount = commande.GetTVA()
+        Assert.AreEqual(200.0, amount, "Calcul de la TVA")
+
+        amount = commande.GetGrandTotalWithoutPromo()
+        Assert.AreEqual(1200.0, amount, "Calcul du TTC avant promotions")
+
+        amount = commande.GetPromos()
+        Assert.AreEqual(200.0, amount, "Calcul des promotions")
+
+        amount = commande.GetGrandTotal()
+        Assert.AreEqual(1000.0, amount, "Calcul du total TTC")
+
+
+    End Sub
     <TestMethod()> Public Sub InvalidQuoteReuseAfterCreatingOrder()
 
         Dim propale = CreateQuote()
@@ -113,7 +162,7 @@ Imports Quotes
         Dim duplicatePropale As Quote = propale.Clone()
 
         Assert.AreNotEqual(propale.Id, duplicatePropale.Id)
-        Assert.AreEqual(propale.GetTTC(), duplicatePropale.GetTTC())
+        Assert.AreEqual(propale.GetGrandTotalWithoutPromo(), duplicatePropale.GetGrandTotalWithoutPromo())
 
     End Sub
 

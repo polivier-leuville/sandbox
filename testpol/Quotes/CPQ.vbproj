@@ -66,6 +66,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AmountReduct.vb" />
     <Compile Include="LineItem.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -82,15 +83,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ObjectBase.vb" />
+    <Compile Include="Abstracts\ObjectBase.vb" />
     <Compile Include="Order.vb" />
-    <Compile Include="OrderBase.vb" />
+    <Compile Include="Abstracts\OrderBase.vb" />
+    <Compile Include="Exeptions\OrderException.vb" />
+    <Compile Include="PercentageReduct.vb" />
     <Compile Include="ProductLineItem.vb" />
     <Compile Include="Quote.vb" />
+    <Compile Include="Exeptions\QuoteException.vb" />
+    <Compile Include="Enums\ReductEnum.vb" />
+    <Compile Include="Abstracts\ReductBase.vb" />
     <Compile Include="ServiceLineItem.vb" />
-    <Compile Include="StatutEnum.vb" />
-    <Compile Include="TaxeEnum.vb" />
-    <Compile Include="TvaStruct.vb" />
+    <Compile Include="Enums\StatutEnum.vb" />
+    <Compile Include="Enums\TaxeEnum.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -113,9 +118,7 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Exeptions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

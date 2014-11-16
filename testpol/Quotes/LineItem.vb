@@ -1,4 +1,4 @@
-﻿
+﻿<Serializable()> _
 Public MustInherit Class LineItem
     Inherits ObjectBase
 

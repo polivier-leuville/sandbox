@@ -3,50 +3,52 @@
   <Class Name="Quotes.ObjectBase">
     <Position X="8.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAoAAAAAAAAAAQAAAAAAAAAAgAACAAAAAA=</HashCode>
       <FileName>ObjectBase.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Quotes.OrderBase">
-    <Position X="6.25" Y="3.25" Width="1.5" />
+    <Position X="6.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEQAAAAABQAAAAQAAAAAAAAAAAAEAABAAIAAA=</HashCode>
+      <HashCode>AAAAAAAEQAAAAABQAAAAQAAAAAAAAAAAAEAABAAIABA=</HashCode>
       <FileName>OrderBase.vb</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="ProductLines" />
     </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Quotes.Quote">
-    <Position X="5.25" Y="6.5" Width="1.5" />
+    <Position X="5.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAIAAABA=</HashCode>
       <FileName>Quote.vb</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Quotes.Order">
-    <Position X="7.25" Y="6.5" Width="1.5" />
+    <Position X="7.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAEAAAAAEAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>Order.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Quotes.LineItem">
-    <Position X="10.25" Y="3.25" Width="1.5" />
+    <Position X="10.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAAAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAgAAAAAA=</HashCode>
       <FileName>LineItem.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Quotes.ProductLineItem">
-    <Position X="9.25" Y="6.5" Width="1.5" />
+    <Position X="9.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ProductLineItem.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Quotes.ServiceLineItem">
-    <Position X="11.25" Y="6.5" Width="1.5" />
+    <Position X="11.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ServiceLineItem.vb</FileName>
@@ -62,7 +64,7 @@
   <Enum Name="Quotes.StatutEnum">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAAAACAAAAAAAAAACAAAAAAAAQAAAAAABAAAAg=</HashCode>
+      <HashCode>EAAAEAAAAACAAAAAAAAAACAAAAAAAAQAAAAAABAAAAg=</HashCode>
       <FileName>StatutEnum.vb</FileName>
     </TypeIdentifier>
   </Enum>
